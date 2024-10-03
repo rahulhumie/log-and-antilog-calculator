@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Log and Antilog Calculator</title>
+    <style>
+      .box {
+        width: 800px;
+        height: auto;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        background-color: lightyellow;
+      }
+      .form-box {
+        width: 400px;
+        height: auto;
+        padding: 10px;
+        background-color: lightblue;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: lightgreen;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: darkgreen;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This page converts a number into log and antilog</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-box">
+        <label for="num1">Enter a number:</label>
+        <input name="num1" placeholder="Enter number" required>
+        <br>
+        <button type="submit" name="log">Log base 10</button>
+      </div>
+    </form>
+
+    <div class="box">
+      <h1>Log base 10 of {{ num1 }} is = {{ result }}</h1>
+      <h1>Antilog base 10 of {{ num1 }} is = {{ result2 }}</h1>
+    </div>
+  </body>
+</html>
